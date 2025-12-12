@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFL Services - Mcilhinney Sports Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #EF3226;
+            --dark-text: #1a1a1a;
+            --light-text: #666;
+            --bg-light: #f8f8f8;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            height: 100px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 80px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #c4281e 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+        }
+
+        .service-card h3 span {
+            color: var(--primary-color);
+        }
+
+        .service-card p {
+            color: var(--light-text);
+            line-height: 1.8;
+        }
+
+        .service-card ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+            color: var(--light-text);
+        }
+
+        .service-card ul li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 4rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .content-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            color: var(--dark-text);
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary-color);
+            margin: 2rem 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-size: 1.1rem;
+            color: var(--dark-text);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-text);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-copyright {
+            opacity: 0.7;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html"><img src="assets/logo.png" alt="Mcilhinney Sports Management" class="logo"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="nfl.html" class="active">NFL</a></li>
+                <li><a href="nil.html">NIL</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>NFL Services</h1>
+        <p>Comprehensive representation and management for professional football athletes</p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="services-container">
+            <div class="section-header">
+                <h2>Our NFL Services</h2>
+                <p>End-to-end management solutions designed to maximize your career potential</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3><span>Contract</span> Negotiations</h3>
+                    <p>Expert negotiation services to secure the best possible contracts and terms for your career.</p>
+                    <ul>
+                        <li>Rookie contract negotiations</li>
+                        <li>Extension and restructure deals</li>
+                        <li>Free agency representation</li>
+                        <li>Performance-based incentives</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3><span>Career</span> Development</h3>
+                    <p>Strategic planning and guidance to help you build a successful and sustainable NFL career.</p>
+                    <ul>
+                        <li>Career path planning</li>
+                        <li>Team selection guidance</li>
+                        <li>Performance optimization</li>
+                        <li>Transition planning</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3><span>Brand</span> Building</h3>
+                    <p>Develop and enhance your personal brand both on and off the field.</p>
+                    <ul>
+                        <li>Endorsement opportunities</li>
+                        <li>Media training and presence</li>
+                        <li>Social media strategy</li>
+                        <li>Community engagement</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3><span>Financial</span> Planning</h3>
+                    <p>Comprehensive financial management to secure your future beyond your playing career.</p>
+                    <ul>
+                        <li>Wealth management</li>
+                        <li>Investment strategies</li>
+                        <li>Tax planning</li>
+                        <li>Retirement planning</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3><span>Legal</span> Support</h3>
+                    <p>Expert legal guidance for all aspects of your professional career.</p>
+                    <ul>
+                        <li>Contract review and analysis</li>
+                        <li>Dispute resolution</li>
+                        <li>Compliance and regulations</li>
+                        <li>Personal legal matters</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3><span>24/7</span> Support</h3>
+                    <p>Round-the-clock availability to address your needs whenever they arise.</p>
+                    <ul>
+                        <li>Emergency support</li>
+                        <li>Immediate consultation</li>
+                        <li>Crisis management</li>
+                        <li>Personal assistance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content">
+        <div class="content-container">
+            <div class="content-section">
+                <h2>Why Choose Mcilhinney for NFL Representation?</h2>
+                <p>Navigating the NFL requires more than just understanding the game—it demands deep knowledge of the business, relationships with key decision-makers, and a strategic approach to every opportunity. At Mcilhinney Sports Management, we bring all of this and more to the table.</p>
+                <p>Our team has extensive experience working with NFL athletes at every stage of their careers, from draft preparation to veteran contract negotiations. We understand the unique challenges and opportunities that come with professional football, and we're committed to helping you make the most of every moment.</p>
+                <div class="highlight-box">
+                    <p>"In the NFL, every decision matters. We ensure our clients have the best possible representation, guidance, and support to make informed choices that maximize their career potential and long-term success."</p>
+                </div>
+            </div>
+            <div class="content-section">
+                <h2>Our Approach</h2>
+                <p>We believe in building long-term relationships with our clients, not just managing transactions. Our approach is personalized, strategic, and results-driven. We take the time to understand your goals, values, and vision for your career, then develop a comprehensive plan to help you achieve them.</p>
+                <p>From contract negotiations to brand development, from financial planning to career transitions, we're with you every step of the way. Our success is measured by your success, and we're committed to delivering exceptional results that exceed your expectations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="nfl.html">NFL</a>
+                <a href="nil.html">NIL</a>
+            </div>
+            <div class="footer-copyright">
+                <p>Copyright © 2024 Mcilhinney Sports Management. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
