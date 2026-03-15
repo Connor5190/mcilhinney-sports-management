@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NFL Services - Mcilhinney Sports Management</title>
+    <title>Client Roster - Mcilhinney Sports Management</title>
     <style>
         * {
             margin: 0;
@@ -96,20 +96,13 @@
             margin: 0 auto;
         }
 
-        .page-header-logo {
-            display: block;
-            max-height: 80px;
-            width: auto;
-            margin: 0.25rem auto 0;
-        }
-
-        /* Services Section */
-        .services {
+        /* Roster Section */
+        .roster {
             padding: 6rem 2rem;
             background: var(--white);
         }
 
-        .services-container {
+        .roster-container {
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -132,49 +125,41 @@
             margin: 0 auto;
         }
 
-        .services-grid {
+        .roster-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-bottom: 4rem;
         }
 
-        .service-card {
+        .roster-card {
             background: var(--bg-light);
             padding: 2.5rem;
             border-radius: 10px;
             transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
         }
 
-        .service-card:hover {
+        .roster-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .service-card h3 {
+        .roster-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             color: var(--dark-text);
         }
 
-        .service-card h3 span {
+        .roster-card .sport {
+            font-size: 1rem;
             color: var(--primary-color);
-        }
-
-        .service-card p {
-            color: var(--light-text);
-            line-height: 1.8;
-        }
-
-        .service-card ul {
-            margin-top: 1rem;
-            padding-left: 1.5rem;
-            color: var(--light-text);
-        }
-
-        .service-card ul li {
             margin-bottom: 0.5rem;
+        }
+
+        .roster-card p {
+            color: var(--light-text);
             line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         /* Content Section */
@@ -203,20 +188,6 @@
             color: var(--light-text);
             line-height: 1.8;
             margin-bottom: 1.5rem;
-        }
-
-        .highlight-box {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 10px;
-            border-left: 5px solid var(--primary-color);
-            margin: 2rem 0;
-        }
-
-        .highlight-box p {
-            margin-bottom: 0;
-            font-size: 1.1rem;
-            color: var(--dark-text);
         }
 
         /* Footer */
@@ -261,7 +232,7 @@
                 display: none;
             }
 
-            .services-grid {
+            .roster-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -274,9 +245,9 @@
             <a href="index.html"><img src="assets/logo.png" alt="Mcilhinney Sports Management" class="logo"></a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="client-roster.html">Client Roster</a></li>
+                <li><a href="client-roster.html" class="active">Client Roster</a></li>
                 <li><a href="client-highlight-videos.html">Client Highlight Videos</a></li>
-                <li><a href="nfl.html" class="active">NFL</a></li>
+                <li><a href="nfl.html">NFL</a></li>
                 <li><a href="nil.html">NIL</a></li>
             </ul>
         </div>
@@ -284,78 +255,64 @@
 
     <!-- Page Header -->
     <section class="page-header">
-        <h1>NFL Services</h1>
-        <img src="assets/NFL_Logo.png" alt="NFL" class="page-header-logo">
-        <p>Comprehensive representation and management for professional football athletes</p>
+        <h1>Client Roster</h1>
+        <p>Our athletes and clients we represent across NFL and NIL</p>
     </section>
 
-    <!-- Services Section -->
-    <section class="services">
-        <div class="services-container">
+    <!-- Roster Section -->
+    <section class="roster">
+        <div class="roster-container">
             <div class="section-header">
-                <h2>Our NFL Services</h2>
-                <p>End-to-end management solutions designed to maximize your career potential</p>
+                <h2>Our Players</h2>
+                <h3>Current and Former</h3>
+                <p>Meet the athletes who have trusted Mcilhinney Sports Management for representation and career guidance</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3><span>Contract</span> Negotiations</h3>
-                    <p>Expert negotiation services to secure the best possible contracts and terms for your career.</p>
-                    <ul>
-                        <li>Rookie contract negotiations</li>
-                        <li>Extension and restructure deals</li>
-                        <li>Free agency representation</li>
-                        <li>Performance-based incentives</li>
-                    </ul>
+            <div class="roster-grid">
+                <!-- Roster cards can be added here -->
+                <div class="roster-card">
+                    <h3>Jahfari Harvey</h3>
+                    <div class="sport">NFL (Las Vegas Raiders)</div>
+                    <p>Brief description or position.</p>
                 </div>
-                <div class="service-card">
-                    <h3><span>Career</span> Development</h3>
-                    <p>Strategic planning and guidance to help you build a successful and sustainable NFL career.</p>
-                    <ul>
-                        <li>Career path planning</li>
-                        <li>Team selection guidance</li>
-                        <li>Performance optimization</li>
-                        <li>Transition planning</li>
-                    </ul>
+                <div class="roster-card">
+                    <h3>Anthony "Tank" Booker</h3>
+                    <div class="sport">NFL</div>
+                    <p>Brief description or position.</p>
                 </div>
-                <div class="service-card">
-                    <h3><span>Brand</span> Building</h3>
-                    <p>Develop and enhance your personal brand both on and off the field.</p>
-                    <ul>
-                        <li>Endorsement opportunities</li>
-                        <li>Media training and presence</li>
-                        <li>Social media strategy</li>
-                        <li>Community engagement</li>
-                    </ul>
+                <div class="roster-card">
+                    <h3>Ahmad Walker</h3>
+                    <div class="sport">NFL</div>
+                    <p>Brief description or position.</p>
                 </div>
-                <div class="service-card">
-                    <h3><span>Financial</span> Planning</h3>
-                    <p>Comprehensive financial management to secure your future beyond your playing career.</p>
-                    <ul>
-                        <li>Wealth management</li>
-                        <li>Investment strategies</li>
-                        <li>Tax planning</li>
-                        <li>Retirement planning</li>
-                    </ul>
+                <div class="roster-card">
+                    <h3>Ja'kobe Clinton</h3>
+                    <div class="sport">NFL (draft class of 2026)</div>
+                    <p>Brief description or position.</p>
                 </div>
-                <div class="service-card">
-                    <h3><span>Legal</span> Support</h3>
-                    <p>Expert legal guidance for all aspects of your professional career.</p>
-                    <ul>
-                        <li>Contract review and analysis</li>
-                        <li>Dispute resolution</li>
-                        <li>Compliance and regulations</li>
-                        <li>Personal legal matters</li>
-                    </ul>
+                <div class="roster-card">
+                    <h3>Cam Smith</h3>
+                    <div class="sport">NFL (draft class of 2026)</div>
+                    <p>Brief description or position.</p>
                 </div>
-                <div class="service-card">
-                    <h3><span>24/7</span> Support</h3>
-                    <p>Round-the-clock availability to address your needs whenever they arise.</p>
-                    <ul>
-                        <li>Emergency support</li>
-                        <li>Immediate consultation</li>
-                        <li>Crisis management</li>
-                        <li>Personal assistance</li>
-                    </ul>
+                <div class="roster-card">
+                    <h3>Peyton Woodring</h3>
+                    <div class="sport">NIL</div>
+                    <p>Brief description or position.</p>
+                </div>
+                <div class="roster-card">
+                    <h3>William Mote</h3>
+                    <div class="sport">NIL</div>
+                    <p>Brief description or position.</p>
+                </div>
+                <div class="roster-card">
+                    <h3>William Wagner</h3>
+                    <div class="sport">NIL</div>
+                    <p>Brief description or position.</p>
+                </div>
+                <div class="roster-card">
+                    <h3>Peter Bowden</h3>
+                    <div class="sport">NIL</div>
+                    <p>Brief description or position.</p>
                 </div>
             </div>
         </div>
@@ -365,17 +322,7 @@
     <section class="content">
         <div class="content-container">
             <div class="content-section">
-                <h2>Why Choose Mcilhinney for NFL Representation?</h2>
-                <p>Navigating the NFL requires more than just understanding the game—it demands deep knowledge of the business, relationships with key decision-makers, and a strategic approach to every opportunity. At Mcilhinney Sports Management, we bring all of this and more to the table.</p>
-                <p>Our team has extensive experience working with NFL athletes at every stage of their careers, from draft preparation to veteran contract negotiations. We understand the unique challenges and opportunities that come with professional football, and we're committed to helping you make the most of every moment.</p>
-                <div class="highlight-box">
-                    <p>"In the NFL, every decision matters. We ensure our clients have the best possible representation, guidance, and support to make informed choices that maximize their career potential and long-term success."</p>
-                </div>
-            </div>
-            <div class="content-section">
-                <h2>Our Approach</h2>
-                <p>We believe in building long-term relationships with our clients, not just managing transactions. Our approach is personalized, strategic, and results-driven. We take the time to understand your goals, values, and vision for your career, then develop a comprehensive plan to help you achieve them.</p>
-                <p>From contract negotiations to brand development, from financial planning to career transitions, we're with you every step of the way. Our success is measured by your success, and we're committed to delivering exceptional results that exceed your expectations.</p>
+                <h2 style="text-align: center;">Player First Always</h2>
             </div>
         </div>
     </section>
@@ -397,4 +344,3 @@
     </footer>
 </body>
 </html>
-
