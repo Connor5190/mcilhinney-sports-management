@@ -84,10 +84,21 @@
             background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
             padding: 4rem 2rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero-content {
             max-width: 1200px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-bubbles {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
         }
 
         .hero-logo {
@@ -711,7 +722,7 @@
                     </div>
                     <h3>Sean Mcilhinney</h3>
                     <div class="role">NFL & NIL Agent</div>
-                    <p>Words.</p>
+                    <p>Words .</p>
                 </div>
                 <div class="team-member">
                     <div class="team-member-photo">
@@ -781,24 +792,129 @@
                 <a href="nil.html">NIL</a>
             </div>
             <div class="footer-copyright">
-                <p>Copyright © 2024 Mcilhinney Sports Management. All rights reserved.</p>
+                <p>Copyright © 2026 Mcilhinney Sports Management. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script>
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Encode the subject for the mailto link
+
             const subject = encodeURIComponent('Contact from Mcilhinney Sports Management Website');
-            
-            // Create mailto link
             const mailtoLink = `mailto:Sean@ms-firm.com?subject=${subject}`;
-            
-            // Open the email client
             window.location.href = mailtoLink;
         });
+
+        // D3 animated hero background
+        (function () {
+            const hero = d3.select('.hero');
+            if (hero.empty()) return;
+
+            const svg = hero.append('svg')
+                .attr('class', 'hero-bubbles')
+                .attr('width', '100%')
+                .attr('height', '100%')
+                .attr('preserveAspectRatio', 'none');
+
+            function getSize() {
+                const rect = hero.node().getBoundingClientRect();
+                return { width: rect.width, height: rect.height || 600 };
+            }
+
+            let { width, height } = getSize();
+
+            const colors = ['rgba(239,50,38,0.25)', 'rgba(239,50,38,0.18)', 'rgba(0,0,0,0.06)'];
+
+            const bubbles = d3.range(18).map(() => ({
+                r: Math.random() * 140 + 60,
+                x: Math.random() * width,
+                y: height + Math.random() * height,
+                speed: Math.random() * 0.5 + 0.15,
+                color: colors[Math.floor(Math.random() * colors.length)]
+            }));
+
+            const circles = svg.selectAll('circle')
+                .data(bubbles)
+                .enter()
+                .append('circle')
+                .attr('cx', d => d.x)
+                .attr('cy', d => d.y)
+                .attr('r', d => d.r)
+                .attr('fill', d => d.color);
+
+            d3.timer(() => {
+                circles.attr('cy', d => {
+                    d.y -= d.speed;
+                    if (d.y + d.r < 0) {
+                        d.y = height + d.r;
+                        d.x = Math.random() * width;
+                    }
+                    return d.y;
+                });
+            });
+
+            window.addEventListener('resize', () => {
+                const size = getSize();
+                width = size.width;
+                height = size.height;
+            });
+        })();
+
+        // D3 animated stats counters
+        (function () {
+            if (typeof d3 === 'undefined') return;
+
+            const items = [
+                { selector: '.stat-item:nth-child(1) h2' },
+                { selector: '.stat-item:nth-child(2) h2' },
+                { selector: '.stat-item:nth-child(3) h2' },
+                { selector: '.stat-item:nth-child(4) h2' }
+            ];
+
+            items.forEach((config, i) => {
+                const sel = d3.select(config.selector);
+                if (sel.empty()) return;
+
+                const original = sel.text().trim();
+                const numeric = parseFloat(original.replace(/[^0-9.]/g, '')) || 0;
+                const suffix = original.replace(/[0-9.]/g, '');
+
+                sel.text('0' + suffix);
+
+                sel.transition()
+                    .delay(300 + i * 200)
+                    .duration(1500)
+                    .tween('text', function () {
+                        const that = d3.select(this);
+                        const iNum = d3.interpolateNumber(0, numeric);
+                        return function (t) {
+                            const value = iNum(t);
+                            const display = Number.isInteger(numeric) ? Math.round(value) : value.toFixed(1);
+                            that.text(display + suffix);
+                        };
+                    });
+            });
+        })();
+
+        // D3 staggered card reveal
+        (function () {
+            if (typeof d3 === 'undefined') return;
+
+            const cards = d3.selectAll('.service-card, .team-member');
+            if (cards.empty()) return;
+
+            cards
+                .style('opacity', 0)
+                .style('transform', 'translateY(24px)');
+
+            cards.transition()
+                .delay((d, i) => 300 + i * 120)
+                .duration(800)
+                .style('opacity', 1)
+                .style('transform', 'translateY(0)');
+        })();
     </script>
 
 </body>
