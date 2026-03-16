@@ -572,6 +572,90 @@
             font-size: 0.95rem;
         }
 
+        /* Reviews Marquee */
+        .reviews {
+            padding: 4rem 0;
+            background: var(--primary-color);
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .reviews-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .reviews-header h2 {
+            font-family: 'Copperplate Gothic Bold', 'Copperplate Gothic', Copperplate, serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            letter-spacing: -0.01em;
+        }
+
+        .reviews-track-wrapper {
+            position: relative;
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+
+        .reviews-track {
+            display: inline-flex;
+            white-space: nowrap;
+            animation: reviews-scroll 70s linear infinite;
+        }
+
+        .review-pill {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.15rem;
+            padding: 0.9rem 1.6rem;
+            margin-right: 1.25rem;
+            border-radius: 999px;
+            background: rgba(0,0,0,0.22);
+            border: 1px solid rgba(255,255,255,0.35);
+            font-size: 0.86rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .review-meta {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .review-meta span {
+            font-weight: 700;
+        }
+
+        .review-meta small {
+            font-weight: 500;
+            opacity: 0.85;
+        }
+
+        .review-quote {
+            font-size: 0.78rem;
+            text-transform: none;
+            letter-spacing: 0.01em;
+            opacity: 0.9;
+        }
+
+        @keyframes reviews-scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -763,6 +847,147 @@
                     <h3>David Owens</h3>
                     <div class="role">Digital Designer</div>
                     <p>Words.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Reviews Marquee -->
+    <section class="reviews">
+        <div class="reviews-inner">
+            <div class="reviews-header">
+                <h2>Trusted By Players, Parents, Coaches & Scouts</h2>
+            </div>
+            <div class="reviews-track-wrapper">
+                <div class="reviews-track">
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>Kyle Caballero</span>
+                            <small>Las Vegas Raiders Scout</small>
+                        </div>
+                        <div class="review-quote">"Detailed, prepared, and truly player-first."</div>
+                    </div>
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>Booker's Father</span>
+                            <small>Former NFL Player</small>
+                        </div>
+                        <div class="review-quote">"I trusted them with my son's future."</div>
+                    </div>
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>Ross Woodring</span>
+                            <small>Peyton Woodring's Father</small>
+                        </div>
+                        <div class="review-quote">"They champion Peyton on and off the field."</div>
+                    </div>
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>Markenson Pierre</span>
+                            <small>Veteran Agent & Army Player</small>
+                        </div>
+                        <div class="review-quote">"Smart, relentless advocates who understand the business."</div>
+                    </div>
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>Maya Harvey</span>
+                            <small>Jahfari's Sister</small>
+                        </div>
+                        <div class="review-quote">"They kept our whole family informed and involved."</div>
+                    </div>
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>Jeff Miret</span>
+                            <small>Pop Warner Coach & Mentor</small>
+                        </div>
+                        <div class="review-quote">"They care about Jahfari the person as much as the player."</div>
+                    </div>
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>SMU Defensive Coaches</span>
+                            <small>Coaches for Jahfari & Tank</small>
+                        </div>
+                        <div class="review-quote">"Professional, respectful, and always looped us in."</div>
+                    </div>
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>William Mote Sr.</span>
+                            <small>Former Player & Father</small>
+                        </div>
+                        <div class="review-quote">"They treat my son like family."</div>
+                    </div>
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>James Lawrence</span>
+                            <small>the MAN</small>
+                        </div>
+                        <div class="review-quote">"Quotes"</div>
+                    </div>
+
+                    <!-- duplicate set for seamless loop -->
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>Kyle Caballero</span>
+                            <small>Las Vegas Raiders Scout</small>
+                        </div>
+                        <div class="review-quote">"Detailed, prepared, and truly player-first."</div>
+                    </div>
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>Booker's Father</span>
+                            <small>Former NFL Player</small>
+                        </div>
+                        <div class="review-quote">"I trusted them with my son's future."</div>
+                    </div>
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>Ross Woodring</span>
+                            <small>Peyton Woodring's Father</small>
+                        </div>
+                        <div class="review-quote">"They champion Peyton on and off the field."</div>
+                    </div>
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>Markenson Pierre</span>
+                            <small>Veteran Agent & Army Player</small>
+                        </div>
+                        <div class="review-quote">"Smart, relentless advocates who understand the business."</div>
+                    </div>
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>Maya Harvey</span>
+                            <small>Jahfari's Sister</small>
+                        </div>
+                        <div class="review-quote">"They kept our whole family informed and involved."</div>
+                    </div>
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>Jeff Miret</span>
+                            <small>Pop Warner Coach & Mentor</small>
+                        </div>
+                        <div class="review-quote">"They care about Jahfari the person as much as the player."</div>
+                    </div>
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>SMU Defensive Coaches</span>
+                            <small>Coaches for Jahfari & Tank</small>
+                        </div>
+                        <div class="review-quote">"Professional, respectful, and always looped us in."</div>
+                    </div>
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>William Mote Sr.</span>
+                            <small>Former Player & Father</small>
+                        </div>
+                        <div class="review-quote">"They treat my son like family."</div>
+                    </div>
+                    <div class="review-pill">
+                        <div class="review-meta">
+                            <span>James Lawrence</span>
+                            <small>the MAN</small>
+                        </div>
+                        <div class="review-quote">"Quotes"</div>
+                    </div>
                 </div>
             </div>
         </div>
