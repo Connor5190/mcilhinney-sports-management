@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Highlight Videos - Mcilhinney Sports Management</title>
+    <title>Testimonials - Mcilhinney Sports Management</title>
     <style>
         * {
             margin: 0;
@@ -96,20 +96,20 @@
             margin: 0 auto;
         }
 
-        /* Videos Section */
-        .videos {
-            padding: 6rem 2rem;
-            background: var(--white);
+        /* Content */
+        .content {
+            padding: 4rem 2rem;
+            background: var(--bg-light);
         }
 
-        .videos-container {
+        .content-container {
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .section-header h2 {
@@ -119,75 +119,60 @@
         }
 
         .section-header p {
-            font-size: 1.2rem;
-            color: var(--light-text);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .videos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .video-card {
-            background: var(--bg-light);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .video-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            background: #1a1a1a;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .video-card h3 {
-            font-size: 1.25rem;
-            padding: 1.25rem 1.5rem 0;
-            color: var(--dark-text);
-        }
-
-        .video-card p {
-            font-size: 0.95rem;
-            color: var(--light-text);
-            padding: 0.5rem 1.5rem 1.5rem;
-            line-height: 1.6;
-        }
-
-        /* Content Section */
-        .content {
-            padding: 4rem 2rem;
-            background: var(--bg-light);
-        }
-
-        .content-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .content-section p {
             font-size: 1.1rem;
             color: var(--light-text);
-            line-height: 1.8;
-            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.25rem;
+        }
+
+        /* Reuse pill styling from the index marquee section */
+        .review-pill {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.15rem;
+            padding: 1.0rem 1.2rem;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.85);
+            border: 1px solid rgba(0,0,0,0.08);
+            font-size: 0.86rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            white-space: normal;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .review-meta {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .review-meta span {
+            font-weight: 700;
+        }
+
+        .review-meta small {
+            font-weight: 500;
+            opacity: 0.85;
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 0.82rem;
+        }
+
+        .review-quote {
+            font-size: 0.95rem;
+            text-transform: none;
+            letter-spacing: 0.01em;
+            opacity: 0.9;
+            line-height: 1.6;
         }
 
         /* Footer */
@@ -231,10 +216,6 @@
             .nav-links {
                 display: none;
             }
-
-            .videos-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -246,9 +227,9 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="client-roster.html">Client Roster</a></li>
-                <li><a href="client-highlight-videos.html" class="active">Client Highlight Videos</a></li>
+                <li><a href="client-highlight-videos.html">Client Highlight Videos</a></li>
                 <li><a href="nfl.html">NFL</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="testimonials.html" class="active">Testimonials</a></li>
                 <li><a href="nil.html">NIL</a></li>
             </ul>
         </div>
@@ -256,47 +237,8 @@
 
     <!-- Page Header -->
     <section class="page-header">
-        <h1>Client Highlight Videos</h1>
-    </section>
-
-    <!-- Videos Section -->
-    <section class="videos">
-        <div class="videos-container">
-            <div class="section-header">
-                <h3 style="font-size: 2em;">Reels and highlight videos created by Mcilhinney Sports Management for NIL brand endorsement pitches and NFL scouts</h3>
-            </div>
-            <div class="videos-grid">
-                <!-- Add video iframes: replace src with your YouTube/Vimeo embed URLs (e.g. https://www.youtube.com/embed/VIDEO_ID) -->
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <iframe src="videos/Peyton_Woodring.mp4" title="Peyton Woodring Highlight" allowfullscreen></iframe>
-                    </div>
-                    <h3>Peyton Woodring - UGA - Athlon All-American kicker</h3>
-                    <p>NIL pitch video. Secured brand endorsements from Raising Canes and Dr. Pepper.</p>
-                </div>
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <iframe src="videos/Jahfari_Harvey.mp4" title="Jahfari Harvey Highlight" allowfullscreen></iframe>
-                    </div>
-                    <h3>Jahfari Harvey - NFL Draft Class of 2025. Las Vegas Raiders Active Roster Edge</h3>
-                    <p>Highlight video. Designed for NFL scouts to show Jahfari's athleticism and different playmaking techniques.</p>
-                </div>
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <iframe src="videos/Anthony_Booker.mp4" title="Anthony &quot;Tank&quot; Booker Highlight" allowfullscreen></iframe>
-                    </div>
-                    <h3>Anthony "Tank" Booker - NFL Draft Class of 2025. Former Las Vegas Raiders 90-man training camp roster</h3>
-                    <p>Highlight video. Designed for NFL scouts to show Tank's premier metrics (speed & vertical jump) and sack & run-stopping abilities.</p>
-                </div>
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <iframe src="" title="Client highlight" allowfullscreen></iframe>
-                    </div>
-                    <h3>Ja'kobe Clinton - NFL Draft Class of 2026. Division 2 All-American Linebacker. Gulf South Conference Defensive player of the year</h3>
-                    <p>Highlight video (changing of the Clinton guard). Designed for NFL scouts to compare Ja'kobe to his brother, former Alabama Crimson Tide All-American and NFL Pro Bowler Ha ha Clinton-Dix </p>
-                </div>
-            </div>
-        </div>
+        <h1>Testimonials</h1>
+        <p>What players, parents, coaches, and scouts say about Mcilhinney Sports Management.</p>
     </section>
 
     <!-- Testimonials Section -->
@@ -304,6 +246,81 @@
         <div class="content-container">
             <div class="section-header">
                 <h2>testimonials</h2>
+                <p>Real words from the people we work with, reflecting our player-first approach and hands-on communication.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="review-pill">
+                    <div class="review-meta">
+                        <span>Kyle Caballero</span>
+                        <small>Las Vegas Raiders Scout</small>
+                    </div>
+                    <div class="review-quote">"Detailed, prepared, and truly player-first."</div>
+                </div>
+
+                <div class="review-pill">
+                    <div class="review-meta">
+                        <span>Booker's Father</span>
+                        <small>Former NFL Player</small>
+                    </div>
+                    <div class="review-quote">"I trusted them with my son's future."</div>
+                </div>
+
+                <div class="review-pill">
+                    <div class="review-meta">
+                        <span>Ross Woodring</span>
+                        <small>Peyton Woodring's Father</small>
+                    </div>
+                    <div class="review-quote">"They champion Peyton on and off the field."</div>
+                </div>
+
+                <div class="review-pill">
+                    <div class="review-meta">
+                        <span>Markenson Pierre</span>
+                        <small>Veteran Agent & Army Player</small>
+                    </div>
+                    <div class="review-quote">"Smart, relentless advocates who understand the business."</div>
+                </div>
+
+                <div class="review-pill">
+                    <div class="review-meta">
+                        <span>Maya Harvey</span>
+                        <small>Jahfari's Sister</small>
+                    </div>
+                    <div class="review-quote">"They kept our whole family informed and involved."</div>
+                </div>
+
+                <div class="review-pill">
+                    <div class="review-meta">
+                        <span>Jeff Miret</span>
+                        <small>Pop Warner Coach & Mentor</small>
+                    </div>
+                    <div class="review-quote">"They care about Jahfari the person as much as the player."</div>
+                </div>
+
+                <div class="review-pill">
+                    <div class="review-meta">
+                        <span>SMU Defensive Coaches</span>
+                        <small>Coaches for Jahfari & Tank</small>
+                    </div>
+                    <div class="review-quote">"Professional, respectful, and always looped us in."</div>
+                </div>
+
+                <div class="review-pill">
+                    <div class="review-meta">
+                        <span>William Mote Sr.</span>
+                        <small>Former Player & Father</small>
+                    </div>
+                    <div class="review-quote">"They treat my son like family."</div>
+                </div>
+
+                <div class="review-pill">
+                    <div class="review-meta">
+                        <span>James Lawrence</span>
+                        <small>the MAN</small>
+                    </div>
+                    <div class="review-quote">"Quotes"</div>
+                </div>
             </div>
         </div>
     </section>
@@ -326,3 +343,4 @@
     </footer>
 </body>
 </html>
+
