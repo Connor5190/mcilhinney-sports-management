@@ -151,12 +151,13 @@
             background: #1a1a1a;
         }
 
-        .video-wrapper iframe {
+        .video-wrapper video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            object-fit: cover;
         }
 
         .video-card h3 {
@@ -248,7 +249,7 @@
                 <li><a href="client-roster.html">Client Roster</a></li>
                 <li><a href="client-highlight-videos.html" class="active">Client Highlight Videos</a></li>
                 <li><a href="nfl.html">NFL</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
+                <!-- <li><a href="testimonials.html">Testimonials</a></li> -->
                 <li><a href="nil.html">NIL</a></li>
             </ul>
         </div>
@@ -266,31 +267,51 @@
                 <h3 style="font-size: 2em;">Reels and highlight videos created by Mcilhinney Sports Management for NIL brand endorsement pitches and NFL scouts</h3>
             </div>
             <div class="videos-grid">
-                <!-- Add video iframes: replace src with your YouTube/Vimeo embed URLs (e.g. https://www.youtube.com/embed/VIDEO_ID) -->
+                <!-- Add videos: replace source src with your mp4 urls -->
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe src="videos/Peyton_Woodring.mp4" title="Peyton Woodring Highlight" allowfullscreen></iframe>
+                        <video
+                            controls
+                            preload="metadata"
+                            playsinline
+                        >
+                            <source src="videos/Peyton_Woodring.mp4" type="video/mp4">
+                        </video>
                     </div>
                     <h3>Peyton Woodring - UGA - Athlon All-American kicker</h3>
                     <p>NIL pitch video. Secured brand endorsements from Raising Canes and Dr. Pepper.</p>
                 </div>
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe src="videos/Jahfari_Harvey.mp4" title="Jahfari Harvey Highlight" allowfullscreen></iframe>
+                        <video
+                            controls
+                            preload="metadata"
+                            playsinline
+                        >
+                            <source src="videos/Jahfari_Harvey.mp4" type="video/mp4">
+                        </video>
                     </div>
                     <h3>Jahfari Harvey - NFL Draft Class of 2025. Las Vegas Raiders Active Roster Edge</h3>
                     <p>Highlight video. Designed for NFL scouts to show Jahfari's athleticism and different playmaking techniques.</p>
                 </div>
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe src="videos/Anthony_Booker.mp4" title="Anthony &quot;Tank&quot; Booker Highlight" allowfullscreen></iframe>
+                        <video
+                            controls
+                            preload="metadata"
+                            playsinline
+                        >
+                            <source src="videos/Anthony_Booker.mp4" type="video/mp4">
+                        </video>
                     </div>
                     <h3>Anthony "Tank" Booker - NFL Draft Class of 2025. Former Las Vegas Raiders 90-man training camp roster</h3>
                     <p>Highlight video. Designed for NFL scouts to show Tank's premier metrics (speed & vertical jump) and sack & run-stopping abilities.</p>
                 </div>
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <iframe src="" title="Client highlight" allowfullscreen></iframe>
+                        <video controls preload="none" playsinline>
+                            <!-- Intentionally no source yet -->
+                        </video>
                     </div>
                     <h3>Ja'kobe Clinton - NFL Draft Class of 2026. Division 2 All-American Linebacker. Gulf South Conference Defensive player of the year</h3>
                     <p>Highlight video (changing of the Clinton guard). Designed for NFL scouts to compare Ja'kobe to his brother, former Alabama Crimson Tide All-American and NFL Pro Bowler Ha ha Clinton-Dix </p>
@@ -316,7 +337,7 @@
                 <a href="client-roster.html">Client Roster</a>
                 <a href="client-highlight-videos.html">Client Highlight Videos</a>
                 <a href="nfl.html">NFL</a>
-                <a href="testimonials.html">Testimonials</a>
+                <!-- <a href="testimonials.html">Testimonials</a> -->
                 <a href="nil.html">NIL</a>
             </div>
             <div class="footer-copyright">
