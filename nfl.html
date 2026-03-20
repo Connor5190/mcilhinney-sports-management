@@ -277,10 +277,6 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
             .services-grid {
                 grid-template-columns: 1fr;
             }
@@ -298,20 +294,29 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="assets/mobile-nav.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <a href="index.html"><img src="assets/logo.png" alt="Mcilhinney Sports Management" class="logo"></a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="client-roster.html">Client Roster</a></li>
-                <li><a href="client-highlight-videos.html">Client Highlight Videos</a></li>
-                <li><a href="nfl.html" class="active">NFL</a></li>
-                <!-- <li><a href="testimonials.html">Testimonials</a></li> -->
-                <li><a href="nil.html">NIL</a></li>
-            </ul>
+            <div class="nav-right">
+                <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </button>
+                <div class="nav-backdrop" aria-hidden="true"></div>
+                <ul class="nav-links" id="site-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="client-roster.html">Client Roster</a></li>
+                    <li><a href="client-highlight-videos.html">Client Highlight Videos</a></li>
+                    <li><a href="nfl.html" class="active">NFL</a></li>
+                    <!-- <li><a href="testimonials.html">Testimonials</a></li> -->
+                    <li><a href="nil.html">NIL</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -403,6 +408,7 @@
             </div>
         </div>
     </footer>
+    <script src="assets/mobile-nav.js"></script>
 </body>
 </html>
 

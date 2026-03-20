@@ -1,0 +1,222 @@
+/* Shared mobile navigation and layout tweaks — load after each page’s inline <style> */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-backdrop {
+    display: none;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 8px;
+    color: var(--dark-text, #1a1a1a);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.nav-toggle:focus-visible {
+    outline: 2px solid var(--primary-color, #ef3226);
+    outline-offset: 2px;
+}
+
+.nav-toggle-bar {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+nav.menu-open .nav-toggle-bar:nth-of-type(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+nav.menu-open .nav-toggle-bar:nth-of-type(2) {
+    opacity: 0;
+}
+
+nav.menu-open .nav-toggle-bar:nth-of-type(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+body.nav-menu-open {
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --nav-bar-height: 72px;
+    }
+
+    nav {
+        padding: 0.5rem 0;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        height: 56px !important;
+    }
+
+    .nav-toggle {
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: var(--nav-bar-height);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+        margin: 0;
+        padding: 0.5rem 1.25rem 2rem;
+        background: var(--white, #fff);
+        box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.06);
+        z-index: 1001;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        transform: translateX(100%);
+        visibility: hidden;
+        transition: transform 0.3s ease, visibility 0.3s;
+        display: flex !important;
+        width: 100%;
+        max-width: none;
+    }
+
+    nav.menu-open .nav-links {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 1rem 0.25rem;
+        font-size: 1.05rem;
+    }
+
+    .nav-backdrop {
+        display: block;
+        position: fixed;
+        top: var(--nav-bar-height);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s ease, visibility 0.3s;
+    }
+
+    nav.menu-open .nav-backdrop {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Clear fixed header overlap */
+    .hero,
+    .page-header {
+        margin-top: var(--nav-bar-height) !important;
+    }
+
+    .hero {
+        min-height: unset;
+        padding: 2.5rem 1rem;
+    }
+
+    .page-header {
+        padding: 2.5rem 1rem !important;
+    }
+
+    .page-header h1 {
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
+    }
+
+    .page-header p,
+    .section-header p {
+        font-size: 1rem;
+    }
+
+    .page-header-logo {
+        max-height: 56px;
+    }
+
+    /* Section rhythm */
+    .services,
+    .stats,
+    .content,
+    .team,
+    .contact,
+    .roster,
+    .videos,
+    .reviews {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .service-card,
+    .roster-card,
+    .team-member {
+        padding: 1.5rem;
+    }
+
+    .stat-item h2 {
+        font-size: clamp(2rem, 10vw, 2.75rem);
+    }
+
+    .highlight-box {
+        padding: 1.5rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .review-pill {
+        white-space: normal;
+        max-width: min(320px, 88vw);
+    }
+
+    .review-quote {
+        white-space: normal;
+    }
+
+    #services {
+        scroll-margin-top: calc(var(--nav-bar-height) + 0.5rem);
+    }
+}
