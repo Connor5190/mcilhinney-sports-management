@@ -77,12 +77,11 @@
         /* Hero Section */
         .hero {
             margin-top: 80px;
-            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
-            padding: 4rem 2rem;
+            padding: 3rem 2rem 1rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -94,11 +93,28 @@
             z-index: 1;
         }
 
-        .hero-bubbles {
-            position: absolute;
-            inset: 0;
+        .hero-feature {
+            background: var(--white);
+            padding: 0 2rem;
+            text-align: center;
+            position: relative;
             z-index: 0;
-            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .hero-feature-img {
+            display: block;
+            margin: 0 auto 0px;
+            width: 100%;
+            max-width: 360px;
+            height: auto;
+            filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.25));
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .stats {
+            position: relative;
+            z-index: 1;
         }
 
         .hero-logo {
@@ -738,6 +754,11 @@
         </div>
     </section>
 
+    <!-- Feature Image Section -->
+    <section class="hero-feature">
+        <img src="assets/Jah_In_Jersey.png" alt="Jahfari Harvey - Las Vegas Raiders" class="hero-feature-img">
+    </section>
+
     <!-- Stats Section -->
     <section class="stats">
         <div class="stats-container">
@@ -1081,61 +1102,6 @@ Sean is known for excellent communication skills, straight forward honesty, loya
             const mailtoLink = `mailto:Sean@ms-firm.com?subject=${subject}`;
             window.location.href = mailtoLink;
         });
-
-        // D3 animated hero background
-        (function () {
-            const hero = d3.select('.hero');
-            if (hero.empty()) return;
-
-            const svg = hero.append('svg')
-                .attr('class', 'hero-bubbles')
-                .attr('width', '100%')
-                .attr('height', '100%')
-                .attr('preserveAspectRatio', 'none');
-
-            function getSize() {
-                const rect = hero.node().getBoundingClientRect();
-                return { width: rect.width, height: rect.height || 600 };
-            }
-
-            let { width, height } = getSize();
-
-            const colors = ['rgba(239,50,38,0.25)', 'rgba(239,50,38,0.18)', 'rgba(0,0,0,0.06)'];
-
-            const bubbles = d3.range(18).map(() => ({
-                r: Math.random() * 140 + 60,
-                x: Math.random() * width,
-                y: height + Math.random() * height,
-                speed: Math.random() * 0.5 + 0.15,
-                color: colors[Math.floor(Math.random() * colors.length)]
-            }));
-
-            const circles = svg.selectAll('circle')
-                .data(bubbles)
-                .enter()
-                .append('circle')
-                .attr('cx', d => d.x)
-                .attr('cy', d => d.y)
-                .attr('r', d => d.r)
-                .attr('fill', d => d.color);
-
-            d3.timer(() => {
-                circles.attr('cy', d => {
-                    d.y -= d.speed;
-                    if (d.y + d.r < 0) {
-                        d.y = height + d.r;
-                        d.x = Math.random() * width;
-                    }
-                    return d.y;
-                });
-            });
-
-            window.addEventListener('resize', () => {
-                const size = getSize();
-                width = size.width;
-                height = size.height;
-            });
-        })();
 
         // D3 animated stats counters
         (function () {
