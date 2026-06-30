@@ -151,13 +151,15 @@
             background: #1a1a1a;
         }
 
-        .video-wrapper video {
+        .video-wrapper video,
+        .video-wrapper iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border: 0;
         }
 
         .video-card h3 {
@@ -340,18 +342,23 @@
                     <h3>Ja'kobe Clinton - NFL Draft Class of 2026. Division 2 All-American Linebacker. Gulf South Conference Defensive player of the year</h3>
                     <p>Additional film for NFL scouts.</p>
                 </div>
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <video
+                            controls
+                            preload="metadata"
+                            playsinline
+                        >
+                            <source src="videos/Michael_Coney.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h3>Michael Coney - Kicker - NFL Free Agent</h3>
+                    <p>Designed for NFL scouts to show Michael's kicking ability, consistency, and accuracy.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="content">
-        <div class="content-container">
-            <div class="section-header">
-                <h2>testimonials</h2>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer>
