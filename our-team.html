@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Mcilhinney Sports Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #EF3226;
+            --dark-text: #1a1a1a;
+            --light-text: #666;
+            --bg-light: #f8f8f8;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Copperplate Gothic Bold', 'Copperplate Gothic', Copperplate, serif;
+            line-height: 1.7;
+            color: var(--dark-text);
+            overflow-x: hidden;
+            font-weight: bold;
+            letter-spacing: -0.01em;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            height: 100px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 80px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #c4281e 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header-content {
+            max-width: 760px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+        }
+
+        .section-header h3 {
+            color: var(--dark-text);
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+
+        .team-member {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .team-member-photo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 1.5rem;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 4px solid var(--primary-color);
+        }
+
+        .team-member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-member-placeholder {
+            width: 100%;
+            height: 100%;
+            background: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary-color);
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-text);
+        }
+
+        .team-member .role {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .team-member p {
+            color: var(--light-text);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-text);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-copyright {
+            opacity: 0.7;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/mobile-nav.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html"><img src="assets/logo.png" alt="Mcilhinney Sports Management" class="logo"></a>
+            <div class="nav-right">
+                <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </button>
+                <div class="nav-backdrop" aria-hidden="true"></div>
+                <ul class="nav-links" id="site-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="our-story.html">Our Story</a></li>
+                    <li><a href="our-team.html" class="active">Our Team</a></li>
+                    <li><a href="client-roster.html">Client Roster</a></li>
+                    <li><a href="client-highlight-videos.html">Client Highlight Videos</a></li>
+                    <li><a href="nfl.html">NFL</a></li>
+                    <!-- <li><a href="testimonials.html">Testimonials</a></li> -->
+                    <li><a href="nil.html">NIL</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Our Team</h1>
+            <p>Meet the experienced professionals dedicated to your success</p>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="team">
+        <div class="team-container">
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.5rem; color: var(--dark-text);">Expert Leadership</h3>
+                <p style="font-size: 1rem;">Our team brings decades of combined experience in sports management, contract negotiations, and athlete representation</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-member-photo">
+                        <img src="assets/Sean.jpeg" alt="Sean">
+                    </div>
+                    <h3>Sean Mcilhinney</h3>
+                    <div class="role">NFL & NIL Agent</div>
+                    <p>Sean is a fully licensed NFL agent which he earned in 2024 and has been a practicing attorney for 30 plus years.
+
+Sean graduated cum laude from North Carolina State University in 1991 with a BA in communications and political science.  
+
+Sean then graduated with honors from Georgia State University College of Law in 1995 where he sat on school's prestigious law review.  
+
+After graduating from law school, Sean was an attorney at King & Spalding, the premier law firm in the Southeast, where he worked in the products liability division representing Fortune 500 companies. He loved working at King & Spalding but decided to leave the large law firm after three years to open his own small boutique law firm focusing on criminal defense and personal injury. 
+
+In 2008, Sean was recognized in Georgia Trend magazine as one of Georgia’s elite attorneys for criminal defense. 
+
+In 2023, Sean founded McIlhinney Sport Management to pursue his life long dream of being a sports agent.  From its inception, the agency's focus has been to provide high quality representation and personalized service in the NIL and NFL space. 
+
+Sean has always had a passion for college and professional football since he was a young boy.  He was a champion high school miler placing third in the 1987 NJ State Championship Group 4 (large schools).  He is married with 5 children.   
+
+Sean is known for excellent communication skills, straight forward honesty, loyalty, hard work and strategic thinking. </p>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-photo">
+                        <img src="assets/McKay.jpeg" alt="McKay">
+                    </div>
+                    <h3>McKay Siebold</h3>
+                    <div class="role">Player Manager & Recruiter</div>
+                    <p>Graduated from Florida State University in 2022 with a degree in Sport Management. Currently McKay is attending Atlanta's John Marshall law school and serves as a recruiter and player manager on the staff. McKay is known for his extensive NFL player knowledge and salary cap intel. McKay was a stand-out wide reciever on his high school football team. McKay holds a MLBPA limited agent certification and plans to secure his NFL agent liscense upon finishing law school. </p>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-photo">
+                        <img src="assets/Kane.jpeg" alt="Kane">
+                    </div>
+                    <h3>Kane Siebold</h3>
+                    <div class="role">NIL Marketing Director & Recruiter</div>
+                    <p>Graduated from University of Georgia with a degree from the Terry College of Business in 2022. Currently Kane is attending Atlanta's John Marshall law school and serves as a recruiter and NIL Marketing Director on the staff. Kane is known for his keen understanding of CFB's ever-changing NIL landscape. Kane was a distinguished high school wide reciever and defensive back, recording 3 interceptions in one game. Kane holds a MLBPA limited agent certification and plans to secure his NFL agent liscense upon graduating law school. </p>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-photo">
+                        <img src="assets/Connor.jpeg" alt="Connor">
+                    </div>
+                    <h3>Connor Mcilhinney</h3>
+                    <div class="role">Web Developer & Digital Designer</div>
+                    <p>Attending Georgia Institute of Technology, Connor is majoring in Computer Science and plans to graduate in 2027. Connor is responsible for the firm's website and Director of Film and Media. An accomplished high school and club soccer player, Connor now competes with Atlanta United's Unified team.</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-photo">
+                        <img src="assets/Lucas.png" alt="Lucas Diaz">
+                    </div>
+                    <h3>Lucas Diaz</h3>
+                    <div class="role">Social Media & Digital Designer</div>
+                    <p>A Sophomore at University of Georgia studying Finance and Sport Management, Lucas produces film and manages the firm's social media platforms. Lucas has a passion for CFB and the NFL.This summer Lucas will further develop his sports knowledge by interning for Next Sport Agency.</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-photo">
+                        <img src="assets/David.jpeg" alt="David">
+                    </div>
+                    <h3>David Owens</h3>
+                    <div class="role">Digital Designer</div>
+                    <p>David is a Freshman at the University of Notre Dame. His responsibilities at the firm include producing film and graphics. David's passion resides in sports broadcasting; currently he is a member of the Notre Dame sports broadcasting team and has announced multiple games including CFB and Men's basketball.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="our-story.html">Our Story</a>
+                <a href="our-team.html">Our Team</a>
+                <a href="client-roster.html">Client Roster</a>
+                <a href="client-highlight-videos.html">Client Highlight Videos</a>
+                <a href="nfl.html">NFL</a>
+                <!-- <a href="testimonials.html">Testimonials</a> -->
+                <a href="nil.html">NIL</a>
+            </div>
+            <div class="footer-copyright">
+                <p>Copyright © 2026 Mcilhinney Sports Management. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/mobile-nav.js"></script>
+</body>
+</html>

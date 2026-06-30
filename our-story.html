@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NFL Services - Mcilhinney Sports Management</title>
+    <title>Our Story - Mcilhinney Sports Management</title>
     <style>
         * {
             margin: 0;
@@ -89,6 +89,8 @@
         .page-header-content {
             max-width: 760px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .page-header h1 {
@@ -103,103 +105,9 @@
             margin: 0 auto;
         }
 
-        .page-header-logo {
-            display: block;
-            max-height: 80px;
-            width: auto;
-            margin: 0.25rem auto 0;
-        }
-
-        .page-header-photo {
-            position: absolute;
-            right: 2rem;
-            top: 77%;
-            transform: translateY(-50%);
-            width: clamp(130px, 20vw, 260px);
-            height: auto;
-            border-radius: 12px;
-            object-fit: cover;
-            /* No shadow/background so it blends into the header */
-            box-shadow: none;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 6rem 2rem;
-            background: var(--white);
-        }
-
-        .services-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1rem;
-            color: var(--dark-text);
-        }
-
-        .section-header p {
-            font-size: 1.2rem;
-            color: var(--light-text);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .service-card {
-            background: var(--bg-light);
-            padding: 2.5rem;
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark-text);
-        }
-
-        .service-card h3 span {
-            color: var(--primary-color);
-        }
-
-        .service-card p {
-            color: var(--light-text);
-            line-height: 1.8;
-        }
-
-        .service-card ul {
-            margin-top: 1rem;
-            padding-left: 1.5rem;
-            color: var(--light-text);
-        }
-
-        .service-card ul li {
-            margin-bottom: 0.5rem;
-            line-height: 1.6;
-        }
-
         /* Content Section */
         .content {
-            padding: 4rem 2rem;
+            padding: 6rem 2rem;
             background: var(--bg-light);
         }
 
@@ -209,7 +117,7 @@
         }
 
         .content-section {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .content-section h2 {
@@ -223,6 +131,19 @@
             color: var(--light-text);
             line-height: 1.8;
             margin-bottom: 1.5rem;
+        }
+
+        .content-image {
+            width: 100%;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .content-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         .highlight-box {
@@ -274,25 +195,6 @@
             opacity: 0.7;
             margin-top: 2rem;
         }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .page-header {
-                padding: 4rem 1.5rem;
-            }
-
-            .page-header-photo {
-                position: static;
-                transform: none;
-                display: block;
-                margin: 1.5rem auto 0;
-                width: min(75vw, 260px);
-            }
-        }
     </style>
     <link rel="stylesheet" href="assets/mobile-nav.css">
 </head>
@@ -310,11 +212,11 @@
                 <div class="nav-backdrop" aria-hidden="true"></div>
                 <ul class="nav-links" id="site-nav">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="our-story.html">Our Story</a></li>
+                    <li><a href="our-story.html" class="active">Our Story</a></li>
                     <li><a href="our-team.html">Our Team</a></li>
                     <li><a href="client-roster.html">Client Roster</a></li>
                     <li><a href="client-highlight-videos.html">Client Highlight Videos</a></li>
-                    <li><a href="nfl.html" class="active">NFL</a></li>
+                    <li><a href="nfl.html">NFL</a></li>
                     <!-- <li><a href="testimonials.html">Testimonials</a></li> -->
                     <li><a href="nil.html">NIL</a></li>
                 </ul>
@@ -325,71 +227,36 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="page-header-content">
-            <h1>NFL Services</h1>
-            <img src="assets/NFL_Logo.png" alt="NFL" class="page-header-logo">
-            <p>Comprehensive representation and management for professional football athletes</p>
+            <h1>Our Story</h1>
+            <p>Player First Always — the people, mission, and vision behind Mcilhinney Sports Management</p>
         </div>
-        <img src="assets/Jah_In_Jersey.png" alt="Ja'kobe Clinton in jersey" class="page-header-photo">
     </section>
 
-    <!-- Services Section -->
-    <section class="services">
-        <div class="services-container">
-            <div class="section-header">
-                <h2>Our NFL Services</h2>
-                <p>End-to-end management solutions designed to maximize your career potential</p>
+    <!-- Content Section -->
+    <section class="content">
+        <div class="content-container">
+            <div class="content-section">
+                <h2>Our Foundation</h2>
+                <p>McIlhinney Sport Management was founded in 2023 by Sean McIlhinney after 27 years of practicing law, along with his two nephews, Kane Siebold and McKay Siebold, to fufill a lifelong dream to be a NFL sports agent. Sean quickly passed the NFL agent exam and secured his certification and license in 2024. From the agency's inception, we have had a singular vision: to provide unparalleled representation and strategic guidance to college and NFL football players in the ever-evolving business landscape of football. Player First Always.</p>
+                <p>What started as a passion project has grown into a trusted name in the industry, known for integrity, hard work, innovation, and results. Kane and McKay, both accomplished football players in their own right, are now working full time for the agency and attending law school to become attorneys and licensed agents.</p>
+                <p>Our journey began with a deep understanding that success in sports management requires more than just business acumen, it demands a genuine passion for the game, hard work, an unwavering commitment to our clients, and the ability to navigate complex challenges with expertise and grace.</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3><span>Contract</span> Negotiations</h3>
-                    <p>Expert negotiation services to secure the best possible contracts and terms for your career.</p>
-                    <ul>
-                        <li>Rookie contract negotiations</li>
-                        <li>Extension and restructure deals</li>
-                        <li>Free agency representation</li>
-                        <li>Performance-based incentives</li>
-                    </ul>
+
+            <div class="content-image">
+                <img src="assets/team.png" alt="team photo">
+            </div>
+
+            <div class="content-section">
+                <h2>Our Mission</h2>
+                <p>At Mcilhinney Sports Management, we believe that every athlete deserves a partner who understands their unique journey and is committed to maximizing their potential both on and off the field. Our mission is to provide comprehensive, personalized management services that empower our clients to achieve their goals and build lasting legacies. What separates us from our competeition is that we are a boutique firm so that we can give special personalized serveice and attention to our clients. Player First Always.</p>
+                <div class="highlight-box">
+                    <p>"We don't just manage careers—we build futures. Every decision we make, every strategy we develop, is centered on creating long-term value and success for our clients."</p>
                 </div>
-                <div class="service-card">
-                    <h3><span>Career</span> Development</h3>
-                    <p>Strategic planning and guidance to help you build a successful and sustainable NFL career.</p>
-                    <ul>
-                        <li>Career path planning</li>
-                        <li>Team selection guidance</li>
-                        <li>Performance optimization</li>
-                        <li>Transition planning</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3><span>Brand</span> Building</h3>
-                    <p>Develop and enhance your personal brand both on and off the field.</p>
-                    <ul>
-                        <li>Endorsement opportunities</li>
-                        <li>Media training and presence</li>
-                        <li>Social media strategy</li>
-                        <li>Community engagement</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3><span>Legal</span> Support</h3>
-                    <p>Expert legal guidance for all aspects of your professional career.</p>
-                    <ul>
-                        <li>Contract review and analysis</li>
-                        <li>Dispute resolution</li>
-                        <li>Compliance and regulations</li>
-                        <li>Personal legal matters</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3><span>24/7</span> Support</h3>
-                    <p>Round-the-clock availability to address your needs whenever they arise.</p>
-                    <ul>
-                        <li>Emergency support</li>
-                        <li>Immediate consultation</li>
-                        <li>Crisis management</li>
-                        <li>Personal assistance</li>
-                    </ul>
-                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Looking Forward</h2>
+                <p>As the sports industry continues to evolve with new opportunities in NIL and digital media, Mcilhinney Sports Management remains at the forefront of innovation. We're constantly developing and implementing strategies that help our clients thrive in an increasingly competitive landscape. Our commitment to excellence and our passion for sports drive us forward every day to best navigate the complex world of NIL and the NFL and find the most advantageous opportunities for our athletes. LFG!</p>
             </div>
         </div>
     </section>
@@ -415,4 +282,3 @@
     <script src="assets/mobile-nav.js"></script>
 </body>
 </html>
-
